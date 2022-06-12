@@ -1,0 +1,94 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+}
+
+body
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   min-height: 100vh;
+   background-color:#36352d;
+   color: #fff;
+}
+.calculator
+ {
+    position: relative;
+    display: grid;
+ }
+
+
+ .calculator .value
+ {
+    grid-column: span 4;
+    height: 100px;
+    text-align: center;
+    border:none;
+    outline: none;
+    padding: 10px;
+    font-size: 20px;
+    background: #fff;
+    color: #000;
+
+ }
+ button, .calculator span
+ {
+    display: grid;
+    width: 60px;
+    height: 60px;
+    font-size: 20px;
+    place-items:center;
+    border: 1px solid rgba(0,0,0,.1);
+ }
+
+ .calculator span:active , span:hover
+ {
+ 	background: #0fb9b1;
+ 	color: #111;
+ }
+ .calculator span.clear
+ {
+
+    font-size: 24px;
+
+ }
+
+button{
+    grid-row:span 2;
+    height:120px;
+    background:#36352d;
+    color:white;
+}
+
+button:hover{
+    background:black;
+    color:white;
+}
+
+
+
+.hisBox{
+   height: 400px;
+   width: 200px;
+   background-color: aliceblue;
+   color: #000;
+   display: none;
+   overflow:auto;
+}
+.hisEle{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: #b8b2b4;
+   height: 50px;
+   width: 200px;
+}
+
+.hisEle:hover{
+    cursor:pointer;
+    background-color:#756e70;
+
+}
