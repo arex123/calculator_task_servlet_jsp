@@ -19,7 +19,7 @@ import java.util.HashMap;
 public class servlet extends HttpServlet {
     static ArrayList<String> historyStack = new ArrayList<>();
 
-    public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
 
         String expression = req.getParameter("txt");
@@ -43,11 +43,16 @@ public class servlet extends HttpServlet {
 
 
 
+            //calculation section
 
 
         try {
             Expression exp = new ExpressionBuilder(expression).build();
             double result =  exp.evaluate();
+//            String r=Eval.evalExp(expression);
+
+//            double result = Double.parseDouble(r);
+
 
             int resInt = (int) result;
 
@@ -64,14 +69,13 @@ public class servlet extends HttpServlet {
 
         }catch (Exception e){
 
-            ans = "Wrong expression";
+            ans = "invalid expresion";
 
         }
 
 
+
 //        System.out.println(ans);
-
-
 //        RequestDispatcher rd = req.getRequestDispatcher("showresult");
 //        rd.forward(req,res);
 
@@ -84,7 +88,11 @@ public class servlet extends HttpServlet {
 
         req.setAttribute("answer",ans);
 
-        req.getRequestDispatcher("showres.jsp").include(req,res);
+
+
+
+        req.getRequestDispatcher("index.jsp").forward(req,res);
+
 
         System.out.println("redirecting to answer page");
 

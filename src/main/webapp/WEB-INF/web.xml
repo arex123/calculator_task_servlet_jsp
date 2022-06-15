@@ -6,7 +6,6 @@
 <display-name>Calculator</display-name>
 
   <welcome-file-list>
-<!--    <welcome-file>showres.jsp</welcome-file>-->
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
 
